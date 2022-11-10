@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "target": "es2016",
+        "module": "es6",
+        "outDir": "build",
+        "sourceMap": true,
+        "incremental": true,
+        "skipLibCheck": true,
+        "strict": true
+    }
+}
