@@ -7,6 +7,18 @@ export class ListNode {
     this.val = val === undefined ? 0 : val;
     this.next = next === undefined ? null : next;
   }
+
+  toList(): number[] {
+    let list = [this.val];
+    let head = this.next;
+
+    while (head) {
+      list.push(head.val);
+      head = head.next;
+    }
+
+    return list;
+  }
 }
 
 export class TreeNode {
@@ -18,6 +30,18 @@ export class TreeNode {
     this.left = left === undefined ? null : left;
     this.right = right === undefined ? null : right;
   }
+}
+
+export function createLinkedList(values: number[]): ListNode {
+  const origin = new ListNode(values[0]);
+  let head = origin;
+
+  for (let i = 1; i < values.length; i++) {
+    head.next = new ListNode(values[i]);
+    head = head.next!;
+  }
+
+  return origin;
 }
 
 export function createBinaryTree(values: (number | null)[]): TreeNode | null {
